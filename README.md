@@ -17,10 +17,9 @@ Dataset for Fast Food Nutrition Information found on [Kaggle](https://www.kaggle
 # Data Analysis Results
 
 <!-- {List the questions and the answers you found by doing this analysis.} -->
-Question #1: Is Chick-Fil-A healthier than McDonalds?
-    How do the different fast food chains compare calory wise?
-
-Question #2: 
+* **Question 1:** Is Chick-Fil-A healthier than McDonalds with regards to calories? 
+* **Question 2:** What items contain the highest amount of sodium? What about protein?
+* **Question 3:** What are the nutritional facts across a related group of foods such as burgers/sandwiches/nuggets?
 
 # Development Environment
 
