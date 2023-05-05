@@ -142,10 +142,5 @@ def get_nutrition_data_by_item(fastfood, search_key):
     .highlight_max(subset=table.columns[2:], color='yellow') \
     .to_html()
 
-
-# If this file is executed like this:
-# > python heart_rate.py
-# then call the main function. However, if this file is simply
-# imported (e.g. into a test file), then skip the call to main.
 if __name__ == "__main__":
     main()
