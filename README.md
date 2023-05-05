@@ -19,20 +19,21 @@ There are two main files to consider with this project- one being a jupyter note
 <!-- {List the questions and the answers you found by doing this analysis.} -->
 * **Question 1:** Is Chick-Fil-A healthier than McDonalds with regards to calories? 
 
-See [Jupyter Notebook Question 1](summary.ipynb)
+    See [Jupyter Notebook Question 1](summary.ipynb)
 
 * **Question 2:** What items contain the highest amount of sodium? What about protein?
 
-See [Jupyter Notebook Question 2](summary.ipynb)
+    See [Jupyter Notebook Question 2](summary.ipynb)
 
 * **Question 3:** What are the nutritional facts across a related group of foods such as burgers/sandwiches/nuggets?
 
-See [Jupyter Notebook Question 3](summary.ipynb)
+    See [Jupyter Notebook Question 3](summary.ipynb)
 
 # Development Environment
 
 <!-- {Describe the tools that you used to develop the software}
 {Describe the programming language that you used and any libraries.} -->
+For this software I primarily used Python and the Python Pandas library. I also used numpy and matplotlib. These are all built in Python libraries. The pandas library was used to analyze the csv file and convert the data into different categories and tables in order to display the findings to the questions. Numpy is a library often used in conjunction with pandas for different numerical functions. In the case of this software I used it to arrange the y-ticks for the box plot I created. The plotting was done using matplotlib. This is also commonly used in conjunction with pandas in order to give visual displays of the data. The last module I utilized was the webbrowser module. I found this while researching working with python and html (the link is below under useful websites).
 
 
 # Useful Websites
@@ -41,6 +42,8 @@ See [Jupyter Notebook Question 3](summary.ipynb)
 * [Pandas Overview](https://pandas.pydata.org/docs/getting_started/overview.html)
 * [Python Docs](https://docs.python.org/3/library/csv.html)
 * [Pandas 10 Minute Tutorial](https://pandas.pydata.org/docs/user_guide/10min.html#min)
+* [Geeks for Geeks](https://www.geeksforgeeks.org/creating-and-viewing-html-files-with-python/)
+* [Sky Towner](https://www.skytowner.com/explore/getting_index_of_series_where_value_is_true)
 
 # Future Work
 
@@ -49,3 +52,7 @@ See [Jupyter Notebook Question 3](summary.ipynb)
     * The html that is displayed currently is not as clean as I would like. In the future I want the tables to look similar to how they would appear for the jupyter notebook and get that more professional look either in a web browser or with a gui.
 * Improve interface
     * While researching the styling for the tables in the pandas documentation it mostly discussed using this for exporting either LaTex or html. I would like to learn how to use these stylized tables in a python gui and have interactive buttons for dynamically creating the tables rather than having to enter in the data via a terminal.
+* Additional Operations
+    * I would also like to add additional ways to customize the tables, such as show the statistical summary and box plot of other categories such as protein or cal_fat.
+
+There were other interesting things I found while researching for this software including the PandasGUI which seemed to be an interesting way of interfacing with dataframes and could potentially lead to other ways to improve this software.

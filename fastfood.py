@@ -48,6 +48,12 @@ def main():
     webbrowser.open('fastfood.html') 
 
 def display_options(places):
+    """ Displays a list of options accompanied by numbers for the user to choose from.
+
+    Parameters
+        places: list of strings to display (i.e column headers or restaurants)
+    Return: User's choice, adjusted to be index of option
+    """
     input('Press enter to continue\n')
     for i in range(len(places)):
         print(f'{i+1}. {places[i]}')
@@ -59,20 +65,13 @@ def display_options(places):
     print(f'You chose {places[i - 1]} \n') 
     return i - 1
 
-def display_plot(fastfood):
-    # Select portion of the data by label (column)
-    calorieData = fastfood.loc[:, ["restaurant", "calories"]]
-
-    # Create plot of the calorie data by restaurant in a box plot
-    calorieData.plot.box(by='restaurant', title='Calorie Distribution Across Menu Items', 
-                figsize=(10, 5),
-                yticks=np.arange(0,2750,250),
-                xlabel='Restaurants', ylabel='Calories')
-
-    # Show box plot
-    plt.show()
-
 def summarize_data(fastfood):
+    """ Summarizes basic statistical data regarding calories of the different restaurants.
+
+    Parameters:
+        fastfood: dataframe read from the csv file
+    Return: html data of the resulting table after being stylized
+    """
     # Create new dataFrame with quick statistical summary data
     summary = fastfood.groupby('restaurant').describe()["calories"]
 
@@ -82,6 +81,13 @@ def summarize_data(fastfood):
     .to_html()
 
 def get_row_by_restaurant(fastfood, restaurants):
+    """ Get section of rows of the summary table created using the calories column
+
+    Parameters:
+        fastfood: dataframe read from the csv file
+        restaurants: list of restaurants to get the rows of data for
+    Return: html data of the resulting table after being stylized
+    """
     # Create new dataFrame with quick statistical summary data
     summary = fastfood.groupby('restaurant').describe()["calories"]
 
@@ -93,6 +99,13 @@ def get_row_by_restaurant(fastfood, restaurants):
     .to_html()
 
 def get_max_rows(fastfood, column):
+    """Get the five menu items with the highest values in the category provided
+
+    Parameters:
+        fastfood: dataframe read from the csv file
+        column: column header name of what category the user wanted
+    Return: html data of the resulting table after being stylized
+    """
     # Select and sort by column, and select tail of data
     data = fastfood.loc[:, ['restaurant', 'item', column]].dropna(axis=0) \
     .sort_values([column]).tail()
@@ -106,6 +119,13 @@ def get_max_rows(fastfood, column):
     .to_html()
 
 def get_nutrition_data_by_item(fastfood, search_key):
+    """Get the nutritional data based on a search for similarly named menu items
+
+    Parameters:
+        fastfood: dataframe read from the csv file
+        search_key: string provided for the pattern to search the dataframe for
+    Return: html data of the resulting table after being stylized
+    """
     # Create series of bools. True if item name contains search_key, ignore case
     nutrition_data = fastfood['item'].str.contains(pat=search_key, case=False)
 
